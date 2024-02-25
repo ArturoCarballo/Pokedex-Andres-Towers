@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-//import Button from './components/Button';
+import Keyboard from './components/Keyboard/Keyboard';
 
-import NintendoDS from './components/NintendoDS'; 
+import NintendoDS from './components/NintendoDS';
 
 class App extends React.Component {
   render() {
@@ -31,9 +31,7 @@ export default App;
   }
   return (
     <div className="App">
-      <h1>HELLO WORLD {contador}</h1>
-      <Button onClick={aumentar} label='Aumentar' color='blue'></Button>
-      <Button onClick={disminuir} label='Disminuir' color='red'></Button>
+      <Keyboard></Keyboard>
     </div>
   );
 }
