@@ -1,10 +1,5 @@
 import React from 'react';
-import { useState } from "react";
-import logo from './logo.svg';
 import './App.css';
-import Keyboard from './components/Keyboard/Keyboard';
-import SearchBar from './components/SearchBar/SearchBar';
-import { LanguageVariant } from 'typescript';
 
 import NintendoDS from './components/NintendoDS';
 
