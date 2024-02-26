@@ -1,6 +1,10 @@
 import React from 'react';
+import { useState } from "react";
+import logo from './logo.svg';
 import './App.css';
 import Keyboard from './components/Keyboard/Keyboard';
+import SearchBar from './components/SearchBar/SearchBar';
+import { LanguageVariant } from 'typescript';
 
 import NintendoDS from './components/NintendoDS';
 
@@ -20,18 +24,17 @@ export default App;
 /*function App() {
   const [contador, setContador] = React.useState(0);
 
-  function aumentar() {
-    setContador(contador+1);
-    console.log(contador)
-  }
-
-  function disminuir() {
-    setContador(contador-1);
-    console.log(contador)
-  }
+  const handleKeyPress = (label: string) => {
+    if (label === "del") {
+      setSearchTerm((prev: string) => prev.slice(0, -1))
+    } else {
+      setSearchTerm((prev: string) => prev + label);
+    }
+  };
   return (
     <div className="App">
-      <Keyboard></Keyboard>
+      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}></SearchBar>
+      <Keyboard handleClick={handleKeyPress} ></Keyboard>
     </div>
   );
 }
