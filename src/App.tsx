@@ -3,11 +3,14 @@ import './App.css';
 
 import NintendoDS from './components/NintendoDS';
 
+import MouseTracker from './components/Widgets/MouseTracker';
+
 class App extends React.Component {
   render() {
     return (
       <div className="app">
         {/* Otros componentes de tu aplicación */}
+        <MouseTracker />
         <NintendoDS />
         {/* Otros componentes de tu aplicación */}
       </div>

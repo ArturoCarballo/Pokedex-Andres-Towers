@@ -1,0 +1,14 @@
+.mouseTracker {
+    pointer-events: none;
+    z-index: 99;
+    position: fixed;
+    width: 2rem;
+    height: 200px;
+    background: url('/src/assets/img/stylus.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 0% 100%;
+    transform: rotate(25deg) translate(-2.5rem, -91%);
+    border-radius: 0;
+    opacity: 1;
+}
