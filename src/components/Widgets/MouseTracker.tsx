@@ -12,7 +12,7 @@ const MouseTracker:React.FC = () => {
   const [mousePosition, setMousePosition] = useState<MousePosition>({ x: (window.innerWidth / 2), y: (window.innerHeight / 2) });
 
   const handleMouseMove = (e: MouseEvent) => {
-    console.log(`(x: ${e.clientX}, y: ${e.clientY})`);
+    
     setMousePosition({ x: e.clientX, y: e.clientY });
   };
 
