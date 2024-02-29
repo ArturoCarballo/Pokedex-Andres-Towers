@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from "react";
-import ArrowButton from './arrowbutton';
+import ArrowButton from './Arrowbutton';
 import SearchBar from './SearchBar/SearchBar';
 import Keyboard from './Keyboard/Keyboard';
 
