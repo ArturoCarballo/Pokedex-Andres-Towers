@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from "react";
-import ArrowButton from './arrowbutton';
+import ArrowButton from './Arrowbutton';
 import SearchBar from './SearchBar/SearchBar';
 import Keyboard from './Keyboard/Keyboard';
 
@@ -23,12 +23,15 @@ const NintendoDS: React.FC = () => {
       <div className="controller">
         {/* Botones direccionales LB corner */}
         <div className="directional-pad">
-          <ArrowButton direction="up" onClick={() => console.log('Up button clicked')} />
-          <div>
-            <ArrowButton direction="left" onClick={() => console.log('Left button clicked')} />
-            <ArrowButton direction="right" onClick={() => console.log('Right button clicked')} />
-          </div>
+        <ArrowButton direction="" onClick={() => console.log('Up button clicked')} /> 
+          <ArrowButton direction="up" onClick={() => console.log('Up button clicked')} /> 
+          <ArrowButton direction="" onClick={() => console.log('Up button clicked')} /> 
+          <ArrowButton direction="left" onClick={() => console.log('Left button clicked')} />
+          <ArrowButton direction="" onClick={() => console.log('Left button clicked')} />
+          <ArrowButton direction="right" onClick={() => console.log('Right button clicked')} />
+          <ArrowButton direction="" onClick={() => console.log('Down button clicked')} />
           <ArrowButton direction="down" onClick={() => console.log('Down button clicked')} />
+          <ArrowButton direction="" onClick={() => console.log('Down button clicked')} />
         </div>
       </div>
       <div className="bottom-screen">
