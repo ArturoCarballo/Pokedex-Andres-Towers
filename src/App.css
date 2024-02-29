@@ -37,6 +37,34 @@
   }
 }
 
-* { cursor: none!important; }
+.directional-pad { 
+  display: flex; 
+  flex-wrap: wrap; 
+}
 
-.parteSuperior { display: flex; }
+.dpad-btn { 
+  flex: 1 0 calc(100% / 3); 
+}
+
+.dpad-btn:nth-child(1),
+.dpad-btn:nth-child(3),
+.dpad-btn:nth-child(5),
+.dpad-btn:nth-child(7),
+.dpad-btn:nth-child(9) { 
+  border-color: transparent; 
+  border: none;
+  opacity: 0;
+}
+
+
+.dpad-btn:nth-child(2),
+.dpad-btn:nth-child(4),
+.dpad-btn:nth-child(6),
+.dpad-btn:nth-child(8) { 
+  border: 1px solid black; 
+}
+
+
+
+
+* { cursor: none!important; }
