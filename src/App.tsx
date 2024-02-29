@@ -8,7 +8,7 @@ import MouseTracker from './components/Widgets/MouseTracker';
 class App extends React.Component {
   render() {
     return (
-      <div className="app">
+      <div className="app background">
         {/* Otros componentes de tu aplicación */}
         <MouseTracker />
         <NintendoDS />
