@@ -5,27 +5,13 @@ interface KeyboardProps {
 }
 
 const Keyboard: React.FC<KeyboardProps> = ({ handleClick }) => {
+
+    const buttonsLabels = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "del"];
     return (
-        <div className="flex flex-col">
-            <div>
-                <ButtonKeyboard label={"1"} onClick={handleClick}></ButtonKeyboard>
-                <ButtonKeyboard label={"2"} onClick={handleClick}></ButtonKeyboard>
-                <ButtonKeyboard label={"3"} onClick={handleClick}></ButtonKeyboard>
-            </div>
-            <div>
-                <ButtonKeyboard label={"4"} onClick={handleClick}></ButtonKeyboard>
-                <ButtonKeyboard label={"5"} onClick={handleClick}></ButtonKeyboard>
-                <ButtonKeyboard label={"6"} onClick={handleClick}></ButtonKeyboard>
-            </div>
-            <div>
-                <ButtonKeyboard label={"7"} onClick={handleClick}></ButtonKeyboard>
-                <ButtonKeyboard label={"8"} onClick={handleClick}></ButtonKeyboard>
-                <ButtonKeyboard label={"9"} onClick={handleClick}></ButtonKeyboard>
-            </div>
-            <div>
-                <ButtonKeyboard label={"0"} onClick={handleClick}></ButtonKeyboard>
-                <ButtonKeyboard label={"del"} onClick={handleClick}></ButtonKeyboard>
-            </div>
+        <div className="flex w-full">
+            {buttonsLabels.map(label => (
+                <ButtonKeyboard key={label} label={label} onClick={handleClick}></ButtonKeyboard>
+            ))}
         </div>
     );
 };

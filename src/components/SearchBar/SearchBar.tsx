@@ -7,7 +7,7 @@ interface SearchBarProps {
       return (
           <div>
               <input
-                  className="appearance-none bg-slate-100 rounded-full shadow-xl text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="appearance-none bg-gray-900 rounded-lg text-white py-2 px-2 w-full"
                   type="text"
                   placeholder="Search..."
                   aria-label="Search"
