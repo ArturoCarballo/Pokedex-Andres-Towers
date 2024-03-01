@@ -7,7 +7,7 @@ const PkmDisplay = () => {
                 <h2 className="text-center text-white">Pokemon</h2>
             </div>
             <div className="pokemon-image" >
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/1.png" />
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/1025.png" />
             </div>
         </div>
     );
