@@ -45,7 +45,7 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({ direction, onClick }) => {
   }, [direction, onClick]);
 
   return (
-    <button className="dpad-btn bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-2 border border-gray-400  shadow">
+    <button className="dpad-btn bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-1 border border-gray-400  shadow">
       {arrow}
     </button>
   );
