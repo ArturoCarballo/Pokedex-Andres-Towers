@@ -5,6 +5,7 @@ import Keyboard from './Keyboard/Keyboard';
 import TabBar from './TabBar/TabBar';
 import AbxyButtons from './Buttons/AbxyButtons';
 import DPad from './Buttons/DPad';
+import PkmDisplay from './PkmDisplay/PkmDisplay';
 
 
 const NintendoDS: React.FC = () => {
@@ -22,8 +23,13 @@ const NintendoDS: React.FC = () => {
     <div className="flex flex-col items-center justify-center h-screen my-5" style={{ maxHeight: 'calc(100vh - 3rem)' }}>
       {/* Pantalla Superior */}
       <div className="top parteSuperior bg-gray-900 w-[50%] h-[50%] border-solid border-black border-8 rounded-t-[70px]  flex justify-center items-center">
-        <div className='pantallaSuperior bg-white w-[70%] h-[85%] border-solid border-black border-8 rounded-lg m-auto'>
-          <TabBar />
+        <div className='pantallaSuperior bg-white w-[70%] h-[85%] border-solid border-black border-8 rounded-lg m-auto flex'>
+          <div className='left-panel flex-1 border-r border-gray-400'>
+            <PkmDisplay />
+          </div>
+          <div className='right-panel flex-1'>
+            <TabBar />
+          </div>
         </div>
       </div>
       {/* Sección Central */}
