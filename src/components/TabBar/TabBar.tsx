@@ -13,13 +13,13 @@ function TabBar() {
                 className={`px-4 py-2 rounded-l-md ${activeTab === 1 ? 'bg-sky-700 text-black' : 'bg-gray-900 text-white'}`}
                 onClick={() => handleTabChange(1)}
             >
-                Pokemon
+                Type
             </button>
             <button
                 className={`px-4 py-2 ${activeTab === 2 ? 'bg-sky-700 text-black' : 'bg-gray-900 text-white'}`}
                 onClick={() => handleTabChange(2)}
             >
-                Type
+                Stats
             </button>
             <button
                 className={`px-4 py-2 rounded-r-md ${activeTab === 3 ? 'bg-sky-700 text-black' : 'bg-gray-900 text-white'}`}
