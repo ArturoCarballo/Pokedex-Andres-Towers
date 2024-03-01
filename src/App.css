@@ -1,3 +1,7 @@
+:root {
+  --gris: rgb(17, 24, 39);
+}
+
 .App {
   text-align: center;
 }
@@ -44,7 +48,7 @@
 .bottom { position: relative; }
 .bottom .bottom-container { height: 100%; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; align-items: center; }
 .bottom .bottom-col { flex: 1 0 calc(100% / 3); }
-.bottom .dpad { flex-basis: 20%; }
+.bottom .dpad { flex-basis: 20%; padding: 0 1rem 5rem 1rem; }
 .bottom .bottom-screen { flex-basis: 60%; }
 .bottom .abxy { flex-basis: 20%; }
 
@@ -57,11 +61,15 @@
 
 .dpad-btn {
   flex: 1 0 calc(100% / 3);
+  background: var(--gris);
+  color: #FFF;
+}
+.dpad-btn:hover {
+  background: var(--gris);
 }
 
 .dpad-btn:nth-child(1),
 .dpad-btn:nth-child(3),
-.dpad-btn:nth-child(5),
 .dpad-btn:nth-child(7),
 .dpad-btn:nth-child(9) {
   border-color: transparent;
@@ -69,6 +77,9 @@
   opacity: 0;
 }
 
+.dpad-btn:nth-child(5) {
+  border: 0;
+}
 
 .dpad-btn:nth-child(2),
 .dpad-btn:nth-child(4),
