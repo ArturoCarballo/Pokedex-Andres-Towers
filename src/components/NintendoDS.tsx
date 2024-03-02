@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from "react";
+import { useState, useContext } from "react";
 import SearchBar from './SearchBar/SearchBar';
 import Keyboard from './Keyboard/Keyboard';
 import TabBar from './TabBar/TabBar';
@@ -7,6 +7,7 @@ import AbxyButtons from './Buttons/AbxyButtons';
 import DPad from './Buttons/DPad';
 import PkmDisplay from './PkmDisplay/PkmDisplay';
 import Speaker from './Speaker';
+import { DataContext } from '../context/DataContext';
 
 const NintendoDS: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -23,6 +24,8 @@ const NintendoDS: React.FC = () => {
     console.log("Searching for:", searchTerm);
   };
 
+  const { pokemon } = useContext(DataContext)!;
+
   return (
     <div className="flex flex-col items-center justify-center h-screen my-5" style={{ maxHeight: 'calc(100vh - 3rem)' }}>
       {/* Pantalla Superior */}
@@ -30,7 +33,10 @@ const NintendoDS: React.FC = () => {
         <Speaker />
         <div className='pantallaSuperior display-background bg-white w-[70%] h-[85%] border-solid border-black border-8 rounded-lg m-auto flex'>
           <div className='left-panel flex-1 border-r border-gray-400'>
-            <PkmDisplay />
+            {pokemon &&
+              <PkmDisplay pokemon={pokemon} />
+            }
+
           </div>
           <div className='right-panel flex-1'>
             <TabBar />
@@ -44,7 +50,7 @@ const NintendoDS: React.FC = () => {
       {/* Pantalla Inferior */}
       <div className="bottom bg-sky-700 w-[50%] h-[50%] border-solid border-black border-8 rounded-b-[70px] shadow-2xl">
         <div className='bottom-container'>
-          <DPad/>
+          <DPad />
           <div className='relative bottom-col bottom-screen bg-white w-[60%] h-[90%] border-solid border-black border-8 rounded-b-lg m-auto'>
             <div className='absolute bottom-0 right-0 left-0'>
               <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} onSearch={onSearch}></SearchBar>

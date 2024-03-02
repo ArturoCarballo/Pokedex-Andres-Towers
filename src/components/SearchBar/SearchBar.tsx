@@ -1,6 +1,6 @@
 import { PokeApi } from "../../api/PokeApi";
 import { Pokemon } from "../../models/Pokemon";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 interface SearchBarProps {
     searchTerm: string;
@@ -13,9 +13,11 @@ const SearchBar: React.FC<SearchBarProps> = ({ searchTerm, setSearchTerm, onSear
     const [pokemon, setPokemon] = React.useState<Pokemon | null>(null);
 
     function buscar() {
-        console.log("buscar")
+        console.log("buscar" + pokemonName)
         PokeApi.getPokemonById(pokemonName).then((response) => {
             setPokemon(response.data);
+
+            console.log(response.data);
         }).catch((error) => {
             console.log(error);
         })
@@ -29,7 +31,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ searchTerm, setSearchTerm, onSear
                 type="text"
                 placeholder="Search..."
                 aria-label="Search"
-                value={searchTerm}
+                value={pokemonName}
                 onChange={(e) => setPokemonName(e.target.value)}
             />
             <button

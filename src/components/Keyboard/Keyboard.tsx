@@ -7,7 +7,7 @@ interface KeyboardProps {
 const Keyboard: React.FC<KeyboardProps> = ({ handleClick }) => {
 
     const buttonsLabels1 = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-    const buttonsLabels2 = ["q", "w", "r", "t", "y", "u", "i", "o", "p"];
+    const buttonsLabels2 = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"];
     const buttonsLabels3 = ["a", "s", "d", "f", "g", "h", "i", "j", "k", "l"];
     const buttonsLabels4 = ["z", "x", "c", "v", "b", "n", "m", "del"];
     return (
