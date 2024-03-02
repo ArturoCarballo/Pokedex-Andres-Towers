@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
+import { Pokemon } from '../../models/Pokemon';
 
-function TabBar() {
+interface TabBarProps {
+    pokemon: Pokemon | null;
+}
+
+const TabBar: React.FC<TabBarProps> = ({ pokemon }) => {
     const [activeTab, setActiveTab] = useState<number>(1);
+    if (!pokemon) return <div>No Pokemon selected</div>;
+
 
     const handleTabChange = (tabIndex: number) => {
         setActiveTab(tabIndex);
@@ -32,23 +39,35 @@ function TabBar() {
             <div className="mt-4">
                 {activeTab === 1 && (
                     <ul className='pokemon-info max-w-md space-y-1 text-black-500 list-disc list-inside dark:text-black-400'>
-                        <li>Type 1</li>
-                        <li>Type 2</li>
-                        <li>Type 3</li>
+                        {pokemon.types.map((types, index) => {
+                            return (
+                                <li key={index}>
+                                    {types.type.name}
+                                </li>
+                            )
+                        })}
                     </ul>
                 )}
                 {activeTab === 2 && (
                     <ul className='pokemon-info max-w-md space-y-1 text-black-500 list-disc list-inside dark:text-black-400'>
-                        <li>Stat 1</li>
-                        <li>Stat 2</li>
-                        <li>Stat 3</li>
+                        {pokemon.stats.map((stats, index) => {
+                            return (
+                                <li key={index}>
+                                    {stats.stat.name}: {stats.base_stat}
+                                </li>
+                            )
+                        })}
                     </ul>
                 )}
                 {activeTab === 3 && (
                     <ul className='pokemon-info max-w-md space-y-1 text-black-500 list-disc list-inside dark:text-black-400'>
-                        <li>Move 1</li>
-                        <li>Move 2</li>
-                        <li>Move 3</li>
+                        {pokemon.moves.map((move, index) => {
+                            return (
+                                <li key={index}>
+                                    {move.move.name}
+                                </li>
+                            )
+                        })}
                     </ul>
                 )}
             </div>

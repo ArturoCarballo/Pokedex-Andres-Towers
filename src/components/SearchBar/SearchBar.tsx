@@ -45,4 +45,4 @@ const SearchBar: React.FC<SearchBarProps> = ({ searchTerm, setSearchTerm, onSear
     );
 };
 
-export default SearchBar;
+  export default SearchBar;

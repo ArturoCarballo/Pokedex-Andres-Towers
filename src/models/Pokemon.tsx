@@ -1,11 +1,8 @@
 export interface Pokemon {
     id: number;
     name: string;
-    stats: Stats;
-    types: {
-        slot: number;
-        type: string;
-    }
+    stats: Stats[];
+    types: Types[];
     sprites: {
         other: {
             "official-artwork": {
@@ -25,6 +22,12 @@ interface Stats {
 
 interface Move {
     move: {
+        name: string;
+    }
+}
+
+interface Types {
+    type: {
         name: string;
     }
 }

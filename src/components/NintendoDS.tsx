@@ -2,18 +2,21 @@ import React from 'react';
 import { useState, useContext } from "react";
 import SearchBar from './SearchBar/SearchBar';
 import Keyboard from './Keyboard/Keyboard';
+
 import TabBar from './TabBar/TabBar';
 import AbxyButtons from './Buttons/AbxyButtons';
 import DPad from './Buttons/DPad';
 import PkmDisplay from './PkmDisplay/PkmDisplay';
 import Speaker from './Speaker';
-import { DataContext } from '../context/DataContext';
-import { PokeApi } from '../api/PokeApi';
 import { Pokemon } from '../models/Pokemon';
+import { PokeApi } from '../api/PokeApi';
+
 
 const NintendoDS: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [pokemon, setPokemon] = React.useState<Pokemon | null>(null);
+  const [pokemon, setPokemon] = useState<Pokemon | null>(null);
+  const [pokemonName, setPokemonName] = React.useState('');
+
 
   const handleKeyPress = (label: string) => {
     if (label === "del") {
@@ -35,6 +38,20 @@ const NintendoDS: React.FC = () => {
   };
 
   // const { pokemon } = useContext(DataContext)!;
+
+  const onSearch = () => {
+    console.log("Searching for:", searchTerm);
+    PokeApi.getPokemonById(searchTerm).then((response) => {
+        setPokemon(response.data);
+
+        console.log(response.data);
+    }).catch((error) => {
+        console.log(error);
+    });
+  };
+
+  // const { pokemon } = useContext(DataContext)!;
+
 
   return (
     <div className="flex flex-col items-center justify-center h-screen my-5" style={{ maxHeight: 'calc(100vh - 3rem)' }}>
@@ -70,6 +87,25 @@ const NintendoDS: React.FC = () => {
           <AbxyButtons />
         </div>
       </div>
+
+
+      </div>
+      {/* Sección Central */}
+      <div className="middle bg-gray-800 w-[51%] h-[05%] border-solid border-black border-8 relative rounded-full"></div>
+      {/* Pantalla Inferior */}
+      <div className="bottom bg-sky-700 w-[50%] h-[50%] border-solid border-black border-8 rounded-b-[70px] shadow-2xl">
+        <div className='bottom-container'>
+          <DPad/>
+          <div className='relative bottom-col bottom-screen bg-white w-[60%] h-[90%] border-solid border-black border-8 rounded-b-lg m-auto'>
+            <div className='absolute bottom-0 right-0 left-0'>
+              <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} onSearch={onSearch} setPokemon={setPokemon}></SearchBar>
+              <Keyboard handleClick={handleKeyPress} ></Keyboard>
+            </div>
+          </div>
+          <AbxyButtons />
+        </div>
+      </div>
+
     </div>
   );
 }
