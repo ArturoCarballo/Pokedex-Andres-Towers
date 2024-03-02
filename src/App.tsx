@@ -5,13 +5,17 @@ import NintendoDS from './components/NintendoDS';
 
 import MouseTracker from './components/Widgets/MouseTracker';
 
+import { DataProvider } from './context/DataContext';
+
 class App extends React.Component {
   render() {
     return (
       <div className="app background">
         {/* Otros componentes de tu aplicación */}
-        <MouseTracker />
-        <NintendoDS />
+        <DataProvider>
+          <MouseTracker />
+          <NintendoDS />
+        </DataProvider>
         {/* Otros componentes de tu aplicación */}
       </div>
     );
