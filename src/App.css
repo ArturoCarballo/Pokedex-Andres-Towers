@@ -89,6 +89,12 @@
 }
 
 
+.speaker { flex: 1 0 15%; display: flex; flex-direction: column; flex-wrap: nowrap; align-items: stretch; justify-content: center; gap: 1rem; padding: 0 1rem; }
+.speaker .dots { display: flex; flex-direction: row; flex-wrap: wrap; align-content: center; justify-content: center; align-items: center; gap: 1rem; }
+.speaker .dots .dot-container { flex: 0 0 calc(100% / 3 - 2rem); }
+.speaker .dots .dot-container .dot { width: .5rem; height: .5rem; background: #000; display: inline-block; border-radius: 100%; }
+
+
 
 
 * { cursor: none !important; }
