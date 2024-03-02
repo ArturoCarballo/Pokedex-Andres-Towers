@@ -1,3 +1,7 @@
+import { PokeApi } from "../../api/PokeApi";
+import { Pokemon } from "../../models/Pokemon";
+import React, { useState } from "react";
+
 interface SearchBarProps {
     searchTerm: string;
     setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
@@ -5,6 +9,19 @@ interface SearchBarProps {
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ searchTerm, setSearchTerm, onSearch }) => {
+    const [pokemonName, setPokemonName] = React.useState('');
+    const [pokemon, setPokemon] = React.useState<Pokemon | null>(null);
+
+    function buscar() {
+        console.log("buscar")
+        PokeApi.getPokemonById(pokemonName).then((response) => {
+            setPokemon(response.data);
+        }).catch((error) => {
+            console.log(error);
+        })
+    }
+
+
     return (
         <div className="flex">
             <input
@@ -13,12 +30,12 @@ const SearchBar: React.FC<SearchBarProps> = ({ searchTerm, setSearchTerm, onSear
                 placeholder="Search..."
                 aria-label="Search"
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                onChange={(e) => setPokemonName(e.target.value)}
             />
             <button
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-r-lg"
                 type="button"
-                onClick={() => onSearch()}
+                onClick={() => buscar()}
             >
                 Search
             </button>
