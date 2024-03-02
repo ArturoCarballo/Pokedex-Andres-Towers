@@ -9,10 +9,10 @@ interface ArrowButtonProps {
 
 const ArrowButton: React.FC<ArrowButtonProps> = ({ direction, onClick }) => {
   const arrows = {
-    left: '←',
-    right: '→',
-    up: '↑',
-    down: '↓',
+    left: '―',
+    right: '―',
+    up: '|',
+    down: '|',
   };
 
   const arrow = direction !== '' ? arrows[direction] : '';
