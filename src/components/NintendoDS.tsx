@@ -26,16 +26,6 @@ const NintendoDS: React.FC = () => {
     }
   };
 
-  const onSearch = () => {
-    console.log("Searching for:", searchTerm);
-    PokeApi.getPokemonById(searchTerm).then((response) => {
-        setPokemon(response.data);
-
-        console.log(response.data);
-    }).catch((error) => {
-        console.log(error);
-    });
-  };
 
   // const { pokemon } = useContext(DataContext)!;
 
@@ -66,7 +56,7 @@ const NintendoDS: React.FC = () => {
 
           </div>
           <div className='right-panel flex-1'>
-            <TabBar />
+            <TabBar pokemon={pokemon}/>
           </div>
         </div>
         <Speaker />
@@ -87,25 +77,7 @@ const NintendoDS: React.FC = () => {
           <AbxyButtons />
         </div>
       </div>
-
-
-      </div>
-      {/* Sección Central */}
-      <div className="middle bg-gray-800 w-[51%] h-[05%] border-solid border-black border-8 relative rounded-full"></div>
-      {/* Pantalla Inferior */}
-      <div className="bottom bg-sky-700 w-[50%] h-[50%] border-solid border-black border-8 rounded-b-[70px] shadow-2xl">
-        <div className='bottom-container'>
-          <DPad/>
-          <div className='relative bottom-col bottom-screen bg-white w-[60%] h-[90%] border-solid border-black border-8 rounded-b-lg m-auto'>
-            <div className='absolute bottom-0 right-0 left-0'>
-              <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} onSearch={onSearch} setPokemon={setPokemon}></SearchBar>
-              <Keyboard handleClick={handleKeyPress} ></Keyboard>
-            </div>
-          </div>
-          <AbxyButtons />
-        </div>
-      </div>
-
+      
     </div>
   );
 }
