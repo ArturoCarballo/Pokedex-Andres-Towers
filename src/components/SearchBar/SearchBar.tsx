@@ -13,8 +13,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ searchTerm, setSearchTerm, onSear
     const [pokemon, setPokemon] = React.useState<Pokemon | null>(null);
 
     function buscar() {
-        console.log("buscar" + pokemonName)
-        PokeApi.getPokemonById(pokemonName).then((response) => {
+        console.log("buscar" + searchTerm)
+        PokeApi.getPokemonById(searchTerm).then((response) => {
             setPokemon(response.data);
 
             console.log(response.data);
@@ -31,13 +31,13 @@ const SearchBar: React.FC<SearchBarProps> = ({ searchTerm, setSearchTerm, onSear
                 type="text"
                 placeholder="Search..."
                 aria-label="Search"
-                value={pokemonName}
-                onChange={(e) => setPokemonName(e.target.value)}
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
             />
             <button
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-r-lg"
                 type="button"
-                onClick={() => buscar()}
+                onClick={() => onSearch()}
             >
                 Search
             </button>

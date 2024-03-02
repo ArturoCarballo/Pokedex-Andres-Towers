@@ -8,9 +8,12 @@ import DPad from './Buttons/DPad';
 import PkmDisplay from './PkmDisplay/PkmDisplay';
 import Speaker from './Speaker';
 import { DataContext } from '../context/DataContext';
+import { PokeApi } from '../api/PokeApi';
+import { Pokemon } from '../models/Pokemon';
 
 const NintendoDS: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [pokemon, setPokemon] = React.useState<Pokemon | null>(null);
 
   const handleKeyPress = (label: string) => {
     if (label === "del") {
@@ -22,9 +25,16 @@ const NintendoDS: React.FC = () => {
 
   const onSearch = () => {
     console.log("Searching for:", searchTerm);
+    PokeApi.getPokemonById(searchTerm).then((response) => {
+        setPokemon(response.data);
+
+        console.log(response.data);
+    }).catch((error) => {
+        console.log(error);
+    });
   };
 
-  const { pokemon } = useContext(DataContext)!;
+  // const { pokemon } = useContext(DataContext)!;
 
   return (
     <div className="flex flex-col items-center justify-center h-screen my-5" style={{ maxHeight: 'calc(100vh - 3rem)' }}>
