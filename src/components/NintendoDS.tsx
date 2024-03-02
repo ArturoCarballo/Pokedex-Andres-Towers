@@ -19,6 +19,10 @@ const NintendoDS: React.FC = () => {
     }
   };
 
+  const onSearch = () => {
+    console.log("Searching for:", searchTerm);
+  };
+
   return (
     <div className="flex flex-col items-center justify-center h-screen my-5" style={{ maxHeight: 'calc(100vh - 3rem)' }}>
       {/* Pantalla Superior */}
@@ -40,18 +44,17 @@ const NintendoDS: React.FC = () => {
       {/* Pantalla Inferior */}
       <div className="bottom bg-sky-700 w-[50%] h-[50%] border-solid border-black border-8 rounded-b-[70px] shadow-2xl">
         <div className='bottom-container'>
-          <DPad />
-          <div className='bottom-col bottom-screen bg-white w-[60%] h-[90%] border-solid border-black border-8 rounded-b-lg m-auto'>
-            <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}></SearchBar>
-            <Keyboard handleClick={handleKeyPress} ></Keyboard>
+          <DPad/>
+          <div className='relative bottom-col bottom-screen bg-white w-[60%] h-[90%] border-solid border-black border-8 rounded-b-lg m-auto'>
+            <div className='absolute bottom-0 right-0 left-0'>
+              <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} onSearch={onSearch}></SearchBar>
+              <Keyboard handleClick={handleKeyPress} ></Keyboard>
+            </div>
           </div>
           <AbxyButtons />
         </div>
       </div>
     </div>
-
-
-
   );
 }
 

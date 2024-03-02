@@ -6,7 +6,7 @@ interface ButtonKeyboardProps {
 const ButtonKeyboard = (props: ButtonKeyboardProps) => {
     return (
         <button
-            className="items-center bg-gray-900 rounded-lg p-2 text-white w-full hover:bg-sky-700 active:bg-sky-500"
+            className="items-center p-2 text-black w-full  bg-gradient-to-t from-gray-300 to-white hover:bg-gray-400 active:bg-gray-600"
             onClick={() => props.onClick(props.label)}
         >
             {props.label}
