@@ -24,7 +24,7 @@ const NintendoDS: React.FC = () => {
       {/* Pantalla Superior */}
       <div className="top parteSuperior bg-gray-900 w-[50%] h-[50%] border-solid border-black border-8 rounded-t-[70px]  flex justify-center items-center">
         <Speaker />
-        <div className='pantallaSuperior bg-white w-[70%] h-[85%] border-solid border-black border-8 rounded-lg m-auto flex'>
+        <div className='pantallaSuperior display-background bg-white w-[70%] h-[85%] border-solid border-black border-8 rounded-lg m-auto flex'>
           <div className='left-panel flex-1 border-r border-gray-400'>
             <PkmDisplay />
           </div>

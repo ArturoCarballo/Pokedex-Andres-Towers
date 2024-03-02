@@ -42,20 +42,50 @@
   }
 }
 
-.top, .middle, .bottom { min-width: 650px; }
-.top {  }
-.middle {  }
-.bottom { position: relative; }
-.bottom .bottom-container { height: 100%; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; align-items: center; }
-.bottom .bottom-col { flex: 1 0 calc(100% / 3); }
-.bottom .dpad { flex-basis: 20%; padding: 0 1rem 5rem 1rem; }
-.bottom .bottom-screen { flex-basis: 60%; }
-.bottom .abxy { flex-basis: 20%; }
+.top,
+.middle,
+.bottom {
+  min-width: 650px;
+}
+
+.top {}
+
+.middle {}
+
+.bottom {
+  position: relative;
+}
+
+.bottom .bottom-container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom .bottom-col {
+  flex: 1 0 calc(100% / 3);
+}
+
+.bottom .dpad {
+  flex-basis: 20%;
+  padding: 0 1rem 5rem 1rem;
+}
+
+.bottom .bottom-screen {
+  flex-basis: 60%;
+}
+
+.bottom .abxy {
+  flex-basis: 20%;
+}
 
 
 
-.directional-pad { 
-  display: flex; 
+.directional-pad {
+  display: flex;
   flex-wrap: wrap;
 }
 
@@ -64,6 +94,7 @@
   background: var(--gris);
   color: #FFF;
 }
+
 .dpad-btn:hover {
   background: var(--gris);
 }
@@ -97,7 +128,9 @@
 
 
 
-* { cursor: none !important; }
+* {
+  cursor: none !important;
+}
 
 
 .background {
@@ -106,4 +139,25 @@
   background-position: center;
   height: 100vh;
   overflow: hidden;
+}
+
+.pokemon-image img {
+  height: 90%;
+  width: 90%;
+  object-fit: contain;
+  object-position: 50% 50%;
+}
+
+.pokemon-info {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.display-background {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 100%), url('./PkmDisplayBack.jpg');
+  background-size: 100% 100%;
+  background-position: center;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
