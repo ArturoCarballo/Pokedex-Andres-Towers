@@ -1,40 +1,5 @@
 import React, { createContext, ReactNode, useState, useEffect } from "react";
-
-// Define the Pokemon interface
-export interface Pokemon {
-    id: number;
-    name: string;
-    stats: Stats[];
-    types: Type[];
-    sprites: {
-        other: {
-            "official-artwork": {
-                front_default: string;
-            };
-        };
-    };
-    moves: Move[];
-}
-
-interface Stats {
-    stat: {
-        name: string;
-    };
-    base_stat: number;
-}
-
-interface Type {
-    slot: number;
-    type: {
-        name: string;
-    };
-}
-
-interface Move {
-    move: {
-        name: string;
-    };
-}
+import { Pokemon } from "../models/Pokemon";
 
 // Define the context interface
 interface IDataContext {
